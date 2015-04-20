@@ -1,7 +1,7 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
 <h2 class="text-center">Sign In</h2>
-<%= f.input :email, required: false, autofocus: true, label: false, placeholder: "Email", input_html:{class: "form-control"} %>
-<%= f.input :password, required: false, label: false, placeholder: "Password", input_html:{class: "form-control"} %>
+<%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email", input_html:{class: "form-control"} %>
+<%= f.input :password, required: true, label: false, placeholder: "Password", input_html:{class: "form-control"} %>
 <%= f.button :submit, "Log in", class: "btn btn-primary brn-clock" %>
 <div>
 	<%= render "devise/shared/links" %>
