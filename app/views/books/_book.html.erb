@@ -1,0 +1,11 @@
+<div class="col-md-3">
+	<div class="thumbnail">
+		<%= link_to book_path(book) do %>
+		<%= image_tag "ninja.png", class: "img-responsive" %>
+		<% end %>
+	</div>
+	<div class="caption">
+		<h3><strong><%= link_to book.name, book_path(book) %></strong></h3>
+		<p>$<%= book.price.to_f %></p>
+	</div>
+</div>
