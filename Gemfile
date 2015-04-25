@@ -32,6 +32,7 @@ gem 'devise'
 gem 'sweet-alert'
 gem "cancan"
 gem "paperclip", "~> 4.2"
+gem "dotenv-rails", group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
