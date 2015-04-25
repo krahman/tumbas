@@ -31,6 +31,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'sweet-alert'
 gem "cancan"
+gem "paperclip", "~> 4.2"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
