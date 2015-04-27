@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.1'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -18,12 +17,20 @@ gem 'devise'
 gem 'sweet-alert'
 gem "cancan"
 gem "paperclip", "~> 4.2"
-gem "dotenv-rails", group: :development
 gem "aws-sdk", "< 2.0"
 gem "friendly_id"
 gem "stripe"
 gem "aasm"
 
+group :development do
+	gem "sqlite3"
+	gem "dotenv-rails"
+end
+
+group :production do
+	gem "rails_12factor"
+	gem "pg"
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
