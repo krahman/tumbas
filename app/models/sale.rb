@@ -11,15 +11,15 @@ class Sale < ActiveRecord::Base
 		state :errored
 
 		event :process, after: :charge_card do
-			transaction from: :pending, to: :processing
+			transitions from: :pending, to: :processing
 		end
 
 		event :finish do
-			transaction from: :processing, to: :finished
+			transitions from: :processing, to: :finished
 		end
 
 		event :fail do
-			transaction from: :processing, to: :errored
+			transitions from: :processing, to: :errored
 		end
 	end
 
@@ -27,9 +27,9 @@ class Sale < ActiveRecord::Base
 		begin
 			save!
 			charge = Stripe::Charge.create(
-				amount: self.amount
-				currency: "usd"
-				card: self.stripe_token
+				amount: self.amount,
+				currency: "usd",
+				card: self.stripe_token,
 				description: "Book Sale"
 				)
 			self.update(stripe_id: charge.id)
